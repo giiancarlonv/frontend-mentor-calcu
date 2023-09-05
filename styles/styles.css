@@ -3,45 +3,50 @@
   padding: 0;
 }
 
-body {
+.theme {
   background: hsl(222, 26%, 31%);
   font-family: "League Spartan";
+  transition: 0.4s ease-in-out;
 }
-
-header {
+.theme header {
   margin: 2rem;
   color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-header .slider-container {
+.theme header h1 {
+  font-weight: 800;
+}
+.theme header .slider-container {
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   font-size: 15px;
-  width: 45%;
+  width: 40%;
 }
-header .slider-container span {
+.theme header .slider-container span {
   font-size: 0.8em;
   font-weight: 800;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
 }
-header .slider-container .test {
+.theme header .slider-container .test {
   letter-spacing: 0.3rem;
 }
-header .slider-container .test .number {
+.theme header .slider-container .test .number {
   margin: 0 0.3rem;
+  cursor: pointer;
 }
-header .slider-container .test .slider {
+.theme header .slider-container .test .slider {
   position: relative;
   background: hsl(223, 31%, 20%);
   height: 1.2rem;
   border-radius: 20px;
   padding: 0.5px;
 }
-header .slider-container .test .slider .toggle {
+.theme header .slider-container .test .slider .toggle {
+  transition: 0.4s ease;
   position: absolute;
   background: hsl(6, 63%, 50%);
   width: 0.8rem;
@@ -50,34 +55,41 @@ header .slider-container .test .slider .toggle {
   top: 4px;
   left: 4px;
 }
-
-main {
+.theme main {
   margin: 2rem;
 }
-main .display-input {
-  margin: 1rem 0;
+.theme main .display-input {
+  margin: 1.5rem 0;
   display: flex;
+  transition: 0.4s ease-in-out;
 }
-main .display-input input {
+.theme main .display-input .input {
   width: 100%;
-  padding: 1rem 0 1rem 1rem;
+  height: 3rem;
+  padding: 1.7rem;
   border-radius: 10px;
   color: #fff;
   background: hsl(224, 36%, 15%);
   border: none;
   outline: none;
   font-family: "League Spartan";
-  font-size: 1.8em;
+  font-weight: 800;
+  font-size: 2em;
+  text-align: right;
 }
-main .number-keys {
+.theme main .display-input .input .prev-text {
+  font-size: 0.5em;
+}
+.theme main .number-keys {
+  transition: 0.4s ease-in-out;
   background: hsl(223, 31%, 20%);
   padding: 1.5rem;
-  border-radius: 5px;
+  border-radius: 10px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 15px;
 }
-main .number-keys button {
+.theme main .number-keys button {
   font-family: "League Spartan";
   padding: 1rem 0.5rem 0.5rem 0.5rem;
   font-size: 1.9em;
@@ -85,21 +97,109 @@ main .number-keys button {
   border-radius: 5px;
   color: hsl(221, 14%, 31%);
   font-weight: 900;
-  box-shadow: 0 5px 0 0 hsl(221, 14%, 31%);
+  box-shadow: 0 4px 0 0 hsl(221, 14%, 31%);
+  background: hsl(30, 25%, 89%);
 }
-main .number-keys .del, main .number-keys .reset, main .number-keys .equal {
+.theme main .number-keys .del, .theme main .number-keys .reset, .theme main .number-keys .equal {
   text-transform: uppercase;
   font-size: 1em;
   background: hsl(225, 21%, 49%);
   color: #fff;
   padding: 1rem 0.5rem;
+  box-shadow: 0 4px 0 0 hsl(224, 28%, 35%);
 }
-main .number-keys .equal {
+.theme main .number-keys .equal {
   background: hsl(6, 63%, 50%);
+  box-shadow: 0 4px 0 0 hsl(6, 70%, 34%);
 }
-main .number-keys > button:nth-child(17) {
+.theme main .number-keys > button:nth-child(17) {
   grid-column: span 2;
 }
-main .number-keys > button:nth-child(18) {
+.theme main .number-keys > button:nth-child(18) {
   grid-column: span 2;
+}
+
+.theme.two {
+  background: hsl(0, 0%, 90%);
+}
+.theme.two header {
+  color: hsl(60, 10%, 19%);
+}
+.theme.two .slider {
+  background: hsl(0, 5%, 81%) !important;
+}
+.theme.two .slider .toggle {
+  background: hsl(25, 98%, 40%);
+  left: 1rem !important;
+}
+.theme.two main .input {
+  background: hsl(0, 0%, 93%);
+  color: hsl(60, 10%, 19%);
+}
+.theme.two main .number-keys {
+  background: hsl(0, 5%, 81%);
+}
+.theme.two main .number-keys button {
+  background: hsl(45, 7%, 89%);
+  color: hsl(60, 10%, 19%);
+  box-shadow: 0 4px 0 0 hsl(35, 11%, 61%);
+}
+.theme.two main .number-keys .del, .theme.two main .number-keys .reset, .theme.two main .number-keys .equal {
+  background: hsl(185, 42%, 37%);
+  box-shadow: 0 4px 0 0 hsl(185, 58%, 25%);
+  color: #fff;
+}
+.theme.two main .number-keys .equal {
+  background: hsl(25, 98%, 40%);
+  box-shadow: 0 4px 0 0 hsl(25, 99%, 27%);
+}
+
+.theme.three {
+  background: hsl(268, 75%, 9%);
+}
+.theme.three header {
+  color: hsl(52, 100%, 62%);
+}
+.theme.three .slider {
+  background: hsl(268, 71%, 12%) !important;
+}
+.theme.three .slider .toggle {
+  background: hsl(176, 100%, 44%) !important;
+  left: 2rem !important;
+}
+.theme.three main .input {
+  background: hsl(268, 71%, 12%);
+  color: hsl(52, 100%, 62%);
+}
+.theme.three main .number-keys {
+  background: hsl(268, 71%, 12%);
+}
+.theme.three main .number-keys button {
+  background: hsl(268, 47%, 21%);
+  color: hsl(52, 100%, 62%);
+  box-shadow: 0 4px 0 0 hsl(290, 70%, 36%);
+}
+.theme.three main .number-keys .del, .theme.three main .number-keys .reset, .theme.three main .number-keys .equal {
+  background: hsl(281, 89%, 26%);
+  color: #fff;
+}
+.theme.three main .number-keys .equal {
+  background: hsl(176, 100%, 44%);
+  box-shadow: 0 4px 0 0 hsl(177, 92%, 70%);
+  color: hsl(198, 20%, 13%);
+}
+
+@media (min-width: 1280px) {
+  header {
+    margin: 5rem 30% 1rem !important;
+  }
+  header .slider-container {
+    width: 25% !important;
+  }
+  main {
+    margin: 1rem 30% !important;
+  }
+  main button {
+    font-size: 1.8em !important;
+  }
 }/*# sourceMappingURL=styles.css.map */
